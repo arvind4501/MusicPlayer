@@ -1,0 +1,27 @@
+<h3>Add New Singer</h3>
+
+<ul class="list-unstyled">
+  <%= form_with model: Singer.new do |f| %>
+    <li>
+      <%= f.label :first_name %>
+      <%= f.text_field :first_name %>
+    </li>
+
+    <li>
+      <%= f.label :last_name %>
+      <%= f.text_field :last_name %>
+    </li>
+
+    <li>
+      <%= f.label :age %>
+      <%= f.number_field :age %>
+    </li>
+
+    <li>
+      <%= f.label :nick_name %>
+      <%= f.text_field :nick_name %>
+    <li>
+
+    <%= f.submit %>
+  <% end %>
+</ul>

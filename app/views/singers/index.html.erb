@@ -1,0 +1,21 @@
+<h2 class="text-center">SIngers List </h3><br>
+<table class="m-auto w-100">
+  <thead>
+    <tr class="text-center">
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Age</th>
+      <th>Nick Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @singers.each do |singer| %>
+      <tr class="text-center">
+        <td><%= link_to singer.first_name, edit_singer_path(singer) %></td>
+        <td><%= singer.last_name %></td>
+        <td><%= singer.age %></td>
+        <td><%= singer.nick_name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
