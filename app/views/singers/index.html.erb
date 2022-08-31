@@ -1,7 +1,8 @@
-<h2 class="text-center">SIngers List </h3><br>
+<h2 class="text-center">Singers List </h3><br>
 <table class="m-auto w-100">
   <thead>
     <tr class="text-center">
+      <th>Profile<th>
       <th>First Name</th>
       <th>Last Name</th>
       <th>Age</th>
@@ -11,6 +12,11 @@
   <tbody>
     <% @singers.each do |singer| %>
       <tr class="text-center">
+        <td>
+          <% if singer.profile_picture.attached? %>
+            <%= link_to singer.profile_picture, singer_path(singer) %>
+          <% end %>
+        </td>
         <td><%= link_to singer.first_name, edit_singer_path(singer) %></td>
         <td><%= singer.last_name %></td>
         <td><%= singer.age %></td>

@@ -1,27 +1,32 @@
-<h3>Add New Singer</h3>
+<h3 class="text-center">Add New Singer</h3>
 
-<ul class="list-unstyled">
+<div class="row">
   <%= form_with model: Singer.new do |f| %>
-    <li>
-      <%= f.label :first_name %>
-      <%= f.text_field :first_name %>
-    </li>
+      <div class="col-12 mb-4">
+        <%= f.label :first_name %>
+        <%= f.text_field :first_name, class: 'form-control' %>
+      </div>
 
-    <li>
-      <%= f.label :last_name %>
-      <%= f.text_field :last_name %>
-    </li>
+      <div class="col-12 mb-4">
+        <%= f.label :last_name %>
+        <%= f.text_field :last_name, class: 'form-control' %>
+      </div>
 
-    <li>
-      <%= f.label :age %>
-      <%= f.number_field :age %>
-    </li>
+      <div class="col-12 mb-4">
+        <%= f.label :age %>
+        <%= f.number_field :age, class: 'form-control' %>
+      </div>
 
-    <li>
-      <%= f.label :nick_name %>
-      <%= f.text_field :nick_name %>
-    <li>
+      <div class="col-12 mb-4">
+        <%= f.label :nick_name %>
+        <%= f.text_field :nick_name, class: 'form-control' %>
+      </div>
 
-    <%= f.submit %>
+      <div class="col-12 mb-4">
+        <%= f.label :profile_picture %>
+        <%= f.file_field :profile_picture %>
+      </div><br>
+
+      <%= f.submit class: 'btn btn-success' %>
   <% end %>
-</ul>
+</div>
