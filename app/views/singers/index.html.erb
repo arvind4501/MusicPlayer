@@ -14,7 +14,7 @@
       <tr class="text-center">
         <td>
           <% if singer.profile_picture.attached? %>
-            <%= link_to singer.profile_picture, singer_path(singer) %>
+            <%= link_to image_tag(singer.profile_picture, height: "100", width: "100"), singer_path(singer) %>
           <% end %>
         </td>
         <td><%= link_to singer.first_name, edit_singer_path(singer) %></td>
