@@ -13,8 +13,8 @@ class SingersController < ApplicationController
     @singer = Singer.find(params[:id])
   end
 
-  def update
-
+  def edit
+    @singer = Singer.find(params[:id])
   end
 
   private

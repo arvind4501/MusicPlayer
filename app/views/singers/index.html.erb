@@ -1,7 +1,7 @@
 <h2 class="text-center">Singers List </h3><br>
 <table class="m-auto w-100">
   <thead>
-    <tr class="text-center">
+    <tr class="text-center mt-4 mb-4">
       <th>Profile<th>
       <th>First Name</th>
       <th>Last Name</th>
@@ -11,13 +11,15 @@
   </thead>
   <tbody>
     <% @singers.each do |singer| %>
-      <tr class="text-center">
+      <tr class="text-center  mt-4 mb-4">
         <td>
           <% if singer.profile_picture.attached? %>
-            <%= link_to image_tag(singer.profile_picture, height: "100", width: "100"), singer_path(singer) %>
+            <div class="profile-picture ">
+              <%= link_to image_tag(singer.profile_picture, height: "100", width: "100", class: 'rounded-circle'), singer_path(singer), class: 'img-fluid' %>
+            </div>
           <% end %>
         </td>
-        <td><%= link_to singer.first_name, edit_singer_path(singer) %></td>
+        <td><%= link_to singer.first_name, singer_path(singer) %></td>
         <td><%= singer.last_name %></td>
         <td><%= singer.age %></td>
         <td><%= singer.nick_name %></td>
