@@ -1,0 +1,15 @@
+<div class="singer_details mb-2 mt-2">
+  <% if @singer.profile_picture.attached? %>
+    <div class="profile-picture ">
+      <%= link_to image_tag(@singer.profile_picture, height: "100", width: "100", class: 'rounded-circle'), class: 'img-fluid' %>
+    </div>
+  <% end %>
+  <%= @singer.first_name %>
+  <%= @singer.last_name %>
+  <%= @singer.nick_name %>
+</div>
+<ul>
+  <li><%= link_to "Edit", edit_singer_path(@singer) %></li>
+  <li><%= link_to "Delete", singer_path(@singer) %></li>
+</ul>
+
